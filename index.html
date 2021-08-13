@@ -10,14 +10,19 @@
     <title>Richard Feynman</title>
 </head>
 <body>
-    <div class='header'>
+    <div id='ipt'>
+        <input type="radio" name='mode' onchange="dark()" id="mode1"></input>
+        <label for='mode1'>Mode</label>
+        <input type="radio" name='mode' onchange="light()" id="mode2"></input>
+    </div>
+    <div class='header' id='h'>
         <h1 class='title'>Dr. Richard Feynman</h1>
         <h2 class="sc">Theoretical Physicist</h2>
     </div>
     <div class='image'>
         <img src="https://www.atomicheritage.org/sites/default/files/richard-feynman.jpg" alt=''>
     </div>
-    <div class='timeline'>
+    <div class='timeline' id='tl'>
         <ul>
             <li><b>1918</b> May 11th Born in New York City.</li>
             <li><b>1939</b> Received B.S. from MIT and was named a Putnam Fellow.</li>
@@ -35,6 +40,20 @@
         <q>I... a universe of atoms, an atom in the universe.</q>
 
     </div>
+    <script>
+        function dark(){
+                document.getElementById('h').style.color = "white";
+                document.getElementById('tl').style.color = "white";
+                document.body.style.background = "#00001a"
+                document.getElementsByClassName('quote').style.color = 'black';
+        }
+        function light(){
+                document.getElementById('h').style.color = "black";
+                document.getElementById('tl').style.color = "black";
+                document.body.style.background = "#e0e0e0"
+                document.getElementsByClassName('quote').style.color = 'black';
+        }
+    </script>
     <style>
         body{
             background: #e0e0e0;
@@ -76,6 +95,9 @@
         }
         q{
             font-size: 30px;
+        }
+        #ipt{
+            transform: translateX(45%);
         }
     </style>
 </body>
